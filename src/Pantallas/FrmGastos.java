@@ -5,6 +5,8 @@
  */
 package Pantallas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Admin
@@ -77,6 +79,11 @@ public class FrmGastos extends javax.swing.JFrame {
         getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(845, 129, 109, -1));
 
         jButton1.setText("Registrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 98, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -96,6 +103,11 @@ public class FrmGastos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "saludo " + this.jTextField1.getText());
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
