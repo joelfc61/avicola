@@ -113,8 +113,8 @@ public class FrmLogin extends javax.swing.JFrame {
         });
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, -1, 40));
 
-        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/GallinaBlanca2.jpg"))); // NOI18N
-        getContentPane().add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, 270));
+        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ambos.png"))); // NOI18N
+        getContentPane().add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 70, 380, 210));
 
         btnCfg.setText("CFG");
         btnCfg.addActionListener(new java.awt.event.ActionListener() {

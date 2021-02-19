@@ -29,40 +29,41 @@ public class FrmClientes extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtRazonSocial = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtRFC = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtCalle = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txtNumExt = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtColonia = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txtCP = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbEstados = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jTextField7 = new javax.swing.JTextField();
+        cmbMunicipios = new javax.swing.JComboBox<>();
+        txtNumInt = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        lblIdCliente = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        txtNombreContacto = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        txtTelefono = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
+        txtCelular = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        tblClientes = new javax.swing.JTable();
+        btnGuardar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnLimpia = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -73,72 +74,76 @@ public class FrmClientes extends javax.swing.JFrame {
 
         jLabel2.setText("Razon Social");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 345, -1));
+        getContentPane().add(txtRazonSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 345, -1));
 
         jLabel3.setText("RFC");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 120, -1));
+        getContentPane().add(txtRFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 120, -1));
 
         jLabel5.setText("Domicilio: ");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
         jLabel6.setText("Calle");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 230, -1));
+        getContentPane().add(txtCalle, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 230, -1));
 
         jLabel7.setText("Num. Ext.");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, -1, -1));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 50, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, -1, -1));
+        getContentPane().add(txtNumExt, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 50, -1));
 
         jLabel8.setText("Num. Int");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, -1, -1));
 
         jLabel10.setText("Colonia");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, -1, -1));
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 170, -1));
+        getContentPane().add(txtColonia, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 340, -1));
 
         jLabel11.setText("C.P.");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, -1, -1));
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, 90, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, -1, -1));
+        getContentPane().add(txtCP, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 180, 90, -1));
 
         jLabel12.setText("Estado");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jalisco", "Colima", "Nayarit", "Michoacan", "Zacatecas" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 140, -1));
+        cmbEstados.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jalisco", "Colima", "Nayarit", "Michoacan", "Zacatecas" }));
+        getContentPane().add(cmbEstados, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 140, -1));
 
         jLabel13.setText("Municipio");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, -1, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Guadajalara", "Tlaquepaque", "Tonala", "Zapopan", " " }));
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 230, -1));
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 80, -1));
+        cmbMunicipios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Guadajalara", "Tlaquepaque", "Tonala", "Zapopan", " " }));
+        getContentPane().add(cmbMunicipios, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 230, -1));
+        getContentPane().add(txtNumInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 80, -1));
 
         jLabel9.setText("IdCliente");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
 
-        jLabel14.setBackground(new java.awt.Color(153, 204, 255));
-        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel14.setOpaque(true);
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 30, 20));
+        lblIdCliente.setBackground(new java.awt.Color(153, 204, 255));
+        lblIdCliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblIdCliente.setOpaque(true);
+        getContentPane().add(lblIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 30, 20));
 
         jLabel4.setText("Nombre Contacto");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
-        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 330, -1));
+        getContentPane().add(txtNombreContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 330, -1));
 
         jLabel15.setText("Telefono:");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
-        getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 100, -1));
+
+        txtTelefono.setColumns(10);
+        getContentPane().add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 100, -1));
 
         jLabel16.setText("Celular");
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, -1, -1));
-        getContentPane().add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 110, -1));
+
+        txtCelular.setColumns(10);
+        getContentPane().add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 110, -1));
 
         jLabel17.setText("Correo");
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, -1, -1));
-        getContentPane().add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 290, 190, -1));
+        getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 290, 190, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -149,21 +154,24 @@ public class FrmClientes extends javax.swing.JFrame {
                 "Id", "Razon social", "RFC", "Contacto"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblClientes);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 580, 90));
 
-        jButton1.setText("Guardar");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, -1, -1));
+        btnGuardar.setText("Guardar");
+        getContentPane().add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, -1, -1));
 
-        jButton2.setText("Modificar");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, -1, -1));
+        btnModificar.setText("Modificar");
+        getContentPane().add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, -1, -1));
 
-        jButton3.setText("Eliminar");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, -1, -1));
+        btnEliminar.setText("Eliminar");
+        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, -1, -1));
 
-        jButton4.setText("Limpiar");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, -1, -1));
+        btnLimpia.setText("Limpiar");
+        getContentPane().add(btnLimpia, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, -1, -1));
+
+        jButton5.setText("Agregar");
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -205,18 +213,18 @@ public class FrmClientes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnLimpia;
+    private javax.swing.JButton btnModificar;
+    private javax.swing.JComboBox<String> cmbEstados;
+    private javax.swing.JComboBox<String> cmbMunicipios;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -229,17 +237,18 @@ public class FrmClientes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JLabel lblIdCliente;
+    private javax.swing.JTable tblClientes;
+    private javax.swing.JTextField txtCP;
+    private javax.swing.JTextField txtCalle;
+    private javax.swing.JTextField txtCelular;
+    private javax.swing.JTextField txtColonia;
+    private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtNombreContacto;
+    private javax.swing.JTextField txtNumExt;
+    private javax.swing.JTextField txtNumInt;
+    private javax.swing.JTextField txtRFC;
+    private javax.swing.JTextField txtRazonSocial;
+    private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }

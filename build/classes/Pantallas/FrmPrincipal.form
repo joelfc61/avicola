@@ -12,7 +12,7 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="mnuPacientes">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Pacientes"/>
+            <Property name="text" type="java.lang.String" value="Catalogos"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="1"/>
             </Property>
@@ -20,21 +20,26 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Control"/>
+                <Property name="text" type="java.lang.String" value="Granjas"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Responsables"/>
+                <Property name="text" type="java.lang.String" value="Usuarios"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Reportes"/>
+                <Property name="text" type="java.lang.String" value="Clientes"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem4ActionPerformed"/>
               </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem16">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Puestos"/>
+              </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -45,7 +50,7 @@
                 <LineBorder/>
               </Border>
             </Property>
-            <Property name="text" type="java.lang.String" value="Farmacia"/>
+            <Property name="text" type="java.lang.String" value="Produccion"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Cursor Por defecto"/>
             </Property>
@@ -74,14 +79,19 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem8">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Solicitudes"/>
+                <Property name="text" type="java.lang.String" value="Pedidos"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem17">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cobranza"/>
               </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnuCtrlEnf">
           <Properties>
-            <Property name="text" type="java.lang.String" value="ControlEnf"/>
+            <Property name="text" type="java.lang.String" value="Gastos"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="1"/>
             </Property>
@@ -89,12 +99,12 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem9">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Personal"/>
+                <Property name="text" type="java.lang.String" value="Fijos"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem10">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Registro de Salud"/>
+                <Property name="text" type="java.lang.String" value="Medicamentos"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem11">
@@ -104,7 +114,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem14">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Asignacion Pacientes"/>
+                <Property name="text" type="java.lang.String" value="Alimento"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem14ActionPerformed"/>
@@ -114,7 +124,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnuBenefactores">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Benefactores"/>
+            <Property name="text" type="java.lang.String" value="Reportes"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="1"/>
             </Property>
@@ -128,14 +138,14 @@
             <MenuItem class="javax.swing.JCheckBoxMenuItem" name="jCheckBoxMenuItem1">
               <Properties>
                 <Property name="selected" type="boolean" value="true"/>
-                <Property name="text" type="java.lang.String" value="Donaciones"/>
+                <Property name="text" type="java.lang.String" value="Graficas"/>
               </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnuInventario">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Inventario"/>
+            <Property name="text" type="java.lang.String" value="Parametros"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="1"/>
             </Property>

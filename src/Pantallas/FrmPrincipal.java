@@ -61,11 +61,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
         mnuFarmacia = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem17 = new javax.swing.JMenuItem();
         mnuCtrlEnf = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
@@ -100,16 +102,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenuBar1.setAlignmentY(10.0F);
         jMenuBar1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
 
-        mnuPacientes.setText("Pacientes");
+        mnuPacientes.setText("Catalogos");
         mnuPacientes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
-        jMenuItem2.setText("Control");
+        jMenuItem2.setText("Granjas");
         mnuPacientes.add(jMenuItem2);
 
-        jMenuItem3.setText("Responsables");
+        jMenuItem3.setText("Usuarios");
         mnuPacientes.add(jMenuItem3);
 
-        jMenuItem4.setText("Reportes");
+        jMenuItem4.setText("Clientes");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem4ActionPerformed(evt);
@@ -117,10 +119,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
         mnuPacientes.add(jMenuItem4);
 
+        jMenuItem16.setText("Puestos");
+        mnuPacientes.add(jMenuItem16);
+
         jMenuBar1.add(mnuPacientes);
 
         mnuFarmacia.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        mnuFarmacia.setText("Farmacia");
+        mnuFarmacia.setText("Produccion");
         mnuFarmacia.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         mnuFarmacia.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
@@ -138,24 +143,27 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenuItem7.setText("Inventario");
         mnuFarmacia.add(jMenuItem7);
 
-        jMenuItem8.setText("Solicitudes");
+        jMenuItem8.setText("Pedidos");
         mnuFarmacia.add(jMenuItem8);
+
+        jMenuItem17.setText("Cobranza");
+        mnuFarmacia.add(jMenuItem17);
 
         jMenuBar1.add(mnuFarmacia);
 
-        mnuCtrlEnf.setText("ControlEnf");
+        mnuCtrlEnf.setText("Gastos");
         mnuCtrlEnf.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
-        jMenuItem9.setText("Personal");
+        jMenuItem9.setText("Fijos");
         mnuCtrlEnf.add(jMenuItem9);
 
-        jMenuItem10.setText("Registro de Salud");
+        jMenuItem10.setText("Medicamentos");
         mnuCtrlEnf.add(jMenuItem10);
 
         jMenuItem11.setText("Pedido Medicamentos");
         mnuCtrlEnf.add(jMenuItem11);
 
-        jMenuItem14.setText("Asignacion Pacientes");
+        jMenuItem14.setText("Alimento");
         jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem14ActionPerformed(evt);
@@ -165,19 +173,19 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(mnuCtrlEnf);
 
-        mnuBenefactores.setText("Benefactores");
+        mnuBenefactores.setText("Reportes");
         mnuBenefactores.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jMenuItem1.setText("Control");
         mnuBenefactores.add(jMenuItem1);
 
         jCheckBoxMenuItem1.setSelected(true);
-        jCheckBoxMenuItem1.setText("Donaciones");
+        jCheckBoxMenuItem1.setText("Graficas");
         mnuBenefactores.add(jCheckBoxMenuItem1);
 
         jMenuBar1.add(mnuBenefactores);
 
-        mnuInventario.setText("Inventario");
+        mnuInventario.setText("Parametros");
         mnuInventario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jMenuItem15.setText("Control");
@@ -302,6 +310,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
