@@ -40,7 +40,6 @@ public class FrmCambioPwd extends javax.swing.JFrame {
         btnCambiar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -88,12 +87,9 @@ public class FrmCambioPwd extends javax.swing.JFrame {
         });
         getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, -1, 40));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LogoRojo2.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ambos.png"))); // NOI18N
         jLabel6.setLabelFor(jLabel6);
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 220));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoVerde.jpg"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 340));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 240));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -157,7 +153,6 @@ public class FrmCambioPwd extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPasswordField txtPwdActual;
     private javax.swing.JPasswordField txtPwdConfirma;

@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  */
 public class Conex {
      
-    private Connection con;
+    private Connection con = null;
     
     public static Connection getConnection(){
         String url="";
@@ -26,7 +26,7 @@ public class Conex {
         String insSql = "";
         Connection con = null;
         //puerto="1433"; // puerto de SQL Server
-        String puerto="3306"; // puert de mysql
+        String puerto="3306"; // puerto de mysql
         String bd="bdavicola";
         //user="sa";  // usuario de SqlServer
         String user="root";  // usuario de MySql
@@ -52,6 +52,11 @@ public class Conex {
             System.out.println("Error a: " + ex.getMessage());
         } catch (SQLException ex) {
             System.out.println("Error b: " + ex.getMessage());
+        } finally{
+            if(con != null){
+                System.out.println("Conexion exitosa");    
+            }
+            
         }
         
             return con;

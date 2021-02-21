@@ -42,13 +42,16 @@ public class FrmLogin extends javax.swing.JFrame {
 
      public final boolean validar(){
          boolean res = false;
-         Connection con = Conex.getConnection();
-         if(con != null)
-             res = true;
+         
         try {
+            Connection con = Conex.getConnection();
+         if(con != null){
+             res = true;
+            
             con.close();
+         }
         } catch (SQLException ex) {
-            Logger.getLogger(FrmLogin.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error: "+ ex.getMessage());
         }
          return res;
      }
