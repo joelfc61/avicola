@@ -49,9 +49,9 @@ public class Conex {
             Class.forName(driver);
               con = DriverManager.getConnection(url,user,pwd);
         } catch (ClassNotFoundException ex) {
-            System.out.println("Error a: " + ex.getMessage());
+            System.out.println("Error Conex A: " + ex.getMessage());
         } catch (SQLException ex) {
-            System.out.println("Error b: " + ex.getMessage());
+            System.out.println("Error Conex B: " + ex.getMessage());
         } finally{
             if(con != null){
                 System.out.println("Conexion exitosa");    
