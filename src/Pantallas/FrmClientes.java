@@ -98,7 +98,7 @@ public class FrmClientes extends javax.swing.JFrame {
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, -1, -1));
         getContentPane().add(txtColonia, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 340, -1));
 
-        jLabel11.setText("C.P.");
+        jLabel11.setText("Cod.Post.");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, -1, -1));
         getContentPane().add(txtCP, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 180, 90, -1));
 

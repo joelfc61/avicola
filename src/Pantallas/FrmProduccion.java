@@ -103,7 +103,7 @@ public class FrmProduccion extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblDetalleRecoleccion);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 128, 657, 95));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 128, 730, 95));
 
         jLabel4.setText("Subtotal");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(499, 89, -1, -1));
@@ -121,7 +121,7 @@ public class FrmProduccion extends javax.swing.JFrame {
                 btnAgregarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(634, 87, -1, -1));
+        getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 90, -1, -1));
 
         jLabel6.setText("Total del día");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 237, -1, -1));
@@ -164,7 +164,7 @@ public class FrmProduccion extends javax.swing.JFrame {
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 237, -1, -1));
 
         txtTotalNumHuevos.setEditable(false);
-        getContentPane().add(txtTotalNumHuevos, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, 71, -1));
+        getContentPane().add(txtTotalNumHuevos, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, 71, 20));
 
         jLabel13.setText("Kgs");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(536, 237, -1, -1));
