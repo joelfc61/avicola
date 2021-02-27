@@ -160,7 +160,7 @@ public Image getIconImage(){
             ResultSet rs = stm.executeQuery("select * from usuarios where clave='" +txtUsuario.getText() + "' and password= '"+ cadena+"'");
             if(rs.next()){
                 Datos.idusuario=rs.getInt("idusuario");
-                Datos.nombre = rs.getString("nombre");
+                Datos.nombre = rs.getString("nombre") +" " + rs.getString("appaterno");
                 Datos.modRec = rs.getInt("mRecoleccion");
                 Datos.modMed = rs.getInt("mMedicamentos");
                 Datos.modUser = rs.getInt("mUsuarios");

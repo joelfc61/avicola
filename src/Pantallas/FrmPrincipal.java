@@ -19,12 +19,18 @@ public class FrmPrincipal extends javax.swing.JFrame {
      */
     public FrmPrincipal() {
         initComponents();
+        /*
         mnuUserCtrl.setVisible(false);  
         mnuPacientes.setVisible(false);
         mnuFarmacia.setVisible(false);
         mnuBenefactores.setVisible(false);
         mnuInventario.setVisible(false);
         mnuCtrlEnf.setVisible(false);
+         */
+        
+        //smenuUsuarios.setVisible(false);
+        
+        lblUsuarioActual.setText(Datos.nombre);
         /*
         if(Datos.modPac>0)
           mnuPacientes.setVisible(true);
@@ -55,32 +61,36 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        lblUsuarioActual = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        mnuPacientes = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem16 = new javax.swing.JMenuItem();
-        mnuFarmacia = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        mnuCatalogos = new javax.swing.JMenu();
+        mnuGranjas = new javax.swing.JMenuItem();
+        smenuUsuarios = new javax.swing.JMenuItem();
+        mnuClientes = new javax.swing.JMenuItem();
+        mnuPuestos = new javax.swing.JMenuItem();
+        mnuProveedores = new javax.swing.JMenuItem();
+        mnuParvadas = new javax.swing.JMenuItem();
+        mnuProduccion = new javax.swing.JMenu();
+        mnuEntradas = new javax.swing.JMenuItem();
+        mnuSalidas = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem17 = new javax.swing.JMenuItem();
-        mnuCtrlEnf = new javax.swing.JMenu();
+        mnuGastos = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem14 = new javax.swing.JMenuItem();
-        mnuBenefactores = new javax.swing.JMenu();
+        mnuReportes = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
-        mnuInventario = new javax.swing.JMenu();
-        jMenuItem15 = new javax.swing.JMenuItem();
+        mnuParametros = new javax.swing.JMenu();
+        mnuParams = new javax.swing.JMenuItem();
+        frmEmpresa = new javax.swing.JMenuItem();
         mnuUsuarios = new javax.swing.JMenu();
-        mnuUserCtrl = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
+        mnuCAmbioPwd = new javax.swing.JMenuItem();
         mnuSalir = new javax.swing.JMenu();
         jMenuItem13 = new javax.swing.JMenuItem();
 
@@ -96,72 +106,114 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel3.setText("Módulo Administrativo");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, -1, -1));
 
+        lblUsuarioActual.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(lblUsuarioActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 180, 20));
+
+        jLabel4.setText("Usuario");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, -1, -1));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 1050, 890));
 
         jMenuBar1.setAlignmentY(10.0F);
         jMenuBar1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
 
-        mnuPacientes.setText("Catalogos");
-        mnuPacientes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        mnuCatalogos.setText("Catalogos");
+        mnuCatalogos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
-        jMenuItem2.setText("Granjas");
-        mnuPacientes.add(jMenuItem2);
-
-        jMenuItem3.setText("Usuarios");
-        mnuPacientes.add(jMenuItem3);
-
-        jMenuItem4.setText("Clientes");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        mnuGranjas.setText("Granjas");
+        mnuGranjas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                mnuGranjasActionPerformed(evt);
             }
         });
-        mnuPacientes.add(jMenuItem4);
+        mnuCatalogos.add(mnuGranjas);
 
-        jMenuItem16.setText("Puestos");
-        mnuPacientes.add(jMenuItem16);
-
-        jMenuBar1.add(mnuPacientes);
-
-        mnuFarmacia.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        mnuFarmacia.setText("Produccion");
-        mnuFarmacia.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        mnuFarmacia.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-
-        jMenuItem5.setText("Entradas");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        smenuUsuarios.setText("Usuarios");
+        smenuUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                smenuUsuariosActionPerformed(evt);
             }
         });
-        mnuFarmacia.add(jMenuItem5);
+        mnuCatalogos.add(smenuUsuarios);
 
-        jMenuItem6.setText("Salidas");
-        mnuFarmacia.add(jMenuItem6);
+        mnuClientes.setText("Clientes");
+        mnuClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuClientesActionPerformed(evt);
+            }
+        });
+        mnuCatalogos.add(mnuClientes);
+
+        mnuPuestos.setText("Puestos");
+        mnuPuestos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuPuestosActionPerformed(evt);
+            }
+        });
+        mnuCatalogos.add(mnuPuestos);
+
+        mnuProveedores.setText("Proveedores");
+        mnuProveedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuProveedoresActionPerformed(evt);
+            }
+        });
+        mnuCatalogos.add(mnuProveedores);
+
+        mnuParvadas.setText("Parvadas");
+        mnuParvadas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuParvadasActionPerformed(evt);
+            }
+        });
+        mnuCatalogos.add(mnuParvadas);
+
+        jMenuBar1.add(mnuCatalogos);
+
+        mnuProduccion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        mnuProduccion.setText("Produccion");
+        mnuProduccion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        mnuProduccion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        mnuEntradas.setText("Entradas");
+        mnuEntradas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuEntradasActionPerformed(evt);
+            }
+        });
+        mnuProduccion.add(mnuEntradas);
+
+        mnuSalidas.setText("Salidas");
+        mnuSalidas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuSalidasActionPerformed(evt);
+            }
+        });
+        mnuProduccion.add(mnuSalidas);
 
         jMenuItem7.setText("Inventario");
-        mnuFarmacia.add(jMenuItem7);
+        mnuProduccion.add(jMenuItem7);
 
         jMenuItem8.setText("Pedidos");
-        mnuFarmacia.add(jMenuItem8);
+        mnuProduccion.add(jMenuItem8);
 
         jMenuItem17.setText("Cobranza");
-        mnuFarmacia.add(jMenuItem17);
+        mnuProduccion.add(jMenuItem17);
 
-        jMenuBar1.add(mnuFarmacia);
+        jMenuBar1.add(mnuProduccion);
 
-        mnuCtrlEnf.setText("Gastos");
-        mnuCtrlEnf.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        mnuGastos.setText("Gastos");
+        mnuGastos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jMenuItem9.setText("Fijos");
-        mnuCtrlEnf.add(jMenuItem9);
+        mnuGastos.add(jMenuItem9);
 
         jMenuItem10.setText("Medicamentos");
-        mnuCtrlEnf.add(jMenuItem10);
+        mnuGastos.add(jMenuItem10);
 
         jMenuItem11.setText("Pedido Medicamentos");
-        mnuCtrlEnf.add(jMenuItem11);
+        mnuGastos.add(jMenuItem11);
 
         jMenuItem14.setText("Alimento");
         jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
@@ -169,48 +221,53 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 jMenuItem14ActionPerformed(evt);
             }
         });
-        mnuCtrlEnf.add(jMenuItem14);
+        mnuGastos.add(jMenuItem14);
 
-        jMenuBar1.add(mnuCtrlEnf);
+        jMenuBar1.add(mnuGastos);
 
-        mnuBenefactores.setText("Reportes");
-        mnuBenefactores.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        mnuReportes.setText("Reportes");
+        mnuReportes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jMenuItem1.setText("Control");
-        mnuBenefactores.add(jMenuItem1);
+        mnuReportes.add(jMenuItem1);
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("Graficas");
-        mnuBenefactores.add(jCheckBoxMenuItem1);
+        mnuReportes.add(jCheckBoxMenuItem1);
 
-        jMenuBar1.add(mnuBenefactores);
+        jMenuBar1.add(mnuReportes);
 
-        mnuInventario.setText("Parametros");
-        mnuInventario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        mnuParametros.setText("Parametros");
+        mnuParametros.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
-        jMenuItem15.setText("Control");
-        mnuInventario.add(jMenuItem15);
+        mnuParams.setText("Control");
+        mnuParams.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuParamsActionPerformed(evt);
+            }
+        });
+        mnuParametros.add(mnuParams);
 
-        jMenuBar1.add(mnuInventario);
+        frmEmpresa.setText("Empresa");
+        frmEmpresa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                frmEmpresaActionPerformed(evt);
+            }
+        });
+        mnuParametros.add(frmEmpresa);
+
+        jMenuBar1.add(mnuParametros);
 
         mnuUsuarios.setText("Usuarios");
         mnuUsuarios.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
-        mnuUserCtrl.setText("Control");
-        mnuUserCtrl.addActionListener(new java.awt.event.ActionListener() {
+        mnuCAmbioPwd.setText("Cambio Pwd");
+        mnuCAmbioPwd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuUserCtrlActionPerformed(evt);
+                mnuCAmbioPwdActionPerformed(evt);
             }
         });
-        mnuUsuarios.add(mnuUserCtrl);
-
-        jMenuItem12.setText("Cambio Pwd");
-        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem12ActionPerformed(evt);
-            }
-        });
-        mnuUsuarios.add(jMenuItem12);
+        mnuUsuarios.add(mnuCAmbioPwd);
 
         jMenuBar1.add(mnuUsuarios);
 
@@ -232,34 +289,79 @@ public class FrmPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void mnuClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuClientesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+        FrmClientes frmc = new FrmClientes();
+        frmc.setVisible(true);
+    }//GEN-LAST:event_mnuClientesActionPerformed
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
-    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+    private void mnuCAmbioPwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCAmbioPwdActionPerformed
         FrmCambioPwd fpwd = new FrmCambioPwd();
         fpwd.setVisible(true);
 
-    }//GEN-LAST:event_jMenuItem12ActionPerformed
-
-    private void mnuUserCtrlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuUserCtrlActionPerformed
-         FrmUsuarios fusr = new FrmUsuarios();
-         fusr.setVisible(true);
-  //         this.setVisible(false);
-    }//GEN-LAST:event_mnuUserCtrlActionPerformed
+    }//GEN-LAST:event_mnuCAmbioPwdActionPerformed
 
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    private void mnuEntradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuEntradasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+        FrmProduccion frmp = new FrmProduccion();
+        frmp.setVisible(true);
+    }//GEN-LAST:event_mnuEntradasActionPerformed
+
+    private void mnuGranjasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuGranjasActionPerformed
+        // TODO add your handling code here:
+        FrmGranjas frmg = new FrmGranjas();
+        frmg.setVisible(true);
+    }//GEN-LAST:event_mnuGranjasActionPerformed
+
+    private void mnuParvadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuParvadasActionPerformed
+        // TODO add your handling code here:
+       FrmParvadas par = new FrmParvadas();
+       par.setVisible(true);
+    }//GEN-LAST:event_mnuParvadasActionPerformed
+
+    private void smenuUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smenuUsuariosActionPerformed
+        // TODO add your handling code here:
+        FrmUsuarios frmu = new FrmUsuarios();
+        frmu.setVisible(true);
+    }//GEN-LAST:event_smenuUsuariosActionPerformed
+
+    private void mnuPuestosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuPuestosActionPerformed
+        // TODO add your handling code here:
+     
+    }//GEN-LAST:event_mnuPuestosActionPerformed
+
+    private void mnuProveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuProveedoresActionPerformed
+        // TODO add your handling code here:
+        FrmProveedores frmp = new FrmProveedores();
+        frmp.setVisible(true);
+    }//GEN-LAST:event_mnuProveedoresActionPerformed
+
+    private void mnuSalidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSalidasActionPerformed
+        // TODO add your handling code here:
+        FrmVentas frmv = new FrmVentas();
+        frmv.setVisible(true);
+    }//GEN-LAST:event_mnuSalidasActionPerformed
+
+    private void frmEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frmEmpresaActionPerformed
+        // TODO add your handling code here:
+        FrmEmpresa frme = new FrmEmpresa();
+        frme.setVisible(true);
+    }//GEN-LAST:event_frmEmpresaActionPerformed
+
+    private void mnuParamsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuParamsActionPerformed
+        // TODO add your handling code here:
+        PantConfig pc = new PantConfig();
+        pc.setVisible(true);
+    }//GEN-LAST:event_mnuParamsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -298,35 +400,39 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem frmEmpresa;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
-    private javax.swing.JMenu mnuBenefactores;
-    private javax.swing.JMenu mnuCtrlEnf;
-    private javax.swing.JMenu mnuFarmacia;
-    private javax.swing.JMenu mnuInventario;
-    private javax.swing.JMenu mnuPacientes;
+    private javax.swing.JLabel lblUsuarioActual;
+    private javax.swing.JMenuItem mnuCAmbioPwd;
+    private javax.swing.JMenu mnuCatalogos;
+    private javax.swing.JMenuItem mnuClientes;
+    private javax.swing.JMenuItem mnuEntradas;
+    private javax.swing.JMenu mnuGastos;
+    private javax.swing.JMenuItem mnuGranjas;
+    private javax.swing.JMenu mnuParametros;
+    private javax.swing.JMenuItem mnuParams;
+    private javax.swing.JMenuItem mnuParvadas;
+    private javax.swing.JMenu mnuProduccion;
+    private javax.swing.JMenuItem mnuProveedores;
+    private javax.swing.JMenuItem mnuPuestos;
+    private javax.swing.JMenu mnuReportes;
+    private javax.swing.JMenuItem mnuSalidas;
     private javax.swing.JMenu mnuSalir;
-    private javax.swing.JMenuItem mnuUserCtrl;
     private javax.swing.JMenu mnuUsuarios;
+    private javax.swing.JMenuItem smenuUsuarios;
     // End of variables declaration//GEN-END:variables
 }

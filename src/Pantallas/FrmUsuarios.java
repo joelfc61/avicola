@@ -41,10 +41,10 @@ public class FrmUsuarios extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         txtApPaterno = new javax.swing.JTextField();
         txtApMaterno = new javax.swing.JTextField();
-        chkPacientes = new javax.swing.JCheckBox();
-        chkFarmacia = new javax.swing.JCheckBox();
-        chkCtrlEnf = new javax.swing.JCheckBox();
-        chkBenefactores = new javax.swing.JCheckBox();
+        chkProveedores = new javax.swing.JCheckBox();
+        chkClientes = new javax.swing.JCheckBox();
+        chkProduccion = new javax.swing.JCheckBox();
+        chkVentas = new javax.swing.JCheckBox();
         chkInventario = new javax.swing.JCheckBox();
         chkPersMed = new javax.swing.JCheckBox();
         btnAgregar = new javax.swing.JButton();
@@ -53,9 +53,13 @@ public class FrmUsuarios extends javax.swing.JFrame {
         btnResetPwd = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jCheckBox4 = new javax.swing.JCheckBox();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -70,6 +74,7 @@ public class FrmUsuarios extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -100,28 +105,28 @@ public class FrmUsuarios extends javax.swing.JFrame {
         txtApMaterno.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         getContentPane().add(txtApMaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 168, 30));
 
-        chkPacientes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        chkPacientes.setText("Pacientes");
-        getContentPane().add(chkPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 281, -1, -1));
+        chkProveedores.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        chkProveedores.setText("Proveedores");
+        getContentPane().add(chkProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 281, -1, -1));
 
-        chkFarmacia.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        chkFarmacia.setText("Farmacia");
-        getContentPane().add(chkFarmacia, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 281, -1, -1));
+        chkClientes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        chkClientes.setText("Clientes");
+        getContentPane().add(chkClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 281, -1, -1));
 
-        chkCtrlEnf.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        chkCtrlEnf.setText("Ctrl Enfermeria");
-        getContentPane().add(chkCtrlEnf, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 281, -1, -1));
+        chkProduccion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        chkProduccion.setText("Produccion");
+        getContentPane().add(chkProduccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 281, -1, -1));
 
-        chkBenefactores.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        chkBenefactores.setText("Benefactores");
-        getContentPane().add(chkBenefactores, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 309, -1, -1));
+        chkVentas.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        chkVentas.setText("Ventas");
+        getContentPane().add(chkVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 309, -1, -1));
 
         chkInventario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         chkInventario.setText("Inventario");
         getContentPane().add(chkInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 309, -1, -1));
 
         chkPersMed.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        chkPersMed.setText("Personal Medico");
+        chkPersMed.setText("Gastos");
         getContentPane().add(chkPersMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 309, -1, -1));
 
         btnAgregar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -158,6 +163,9 @@ public class FrmUsuarios extends javax.swing.JFrame {
         jLabel5.setText("Control de Usuarios");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
 
+        jCheckBox1.setText("Modulo z");
+        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, -1, -1));
+
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Asignar Acceso a   Módulos  ");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 246, -1, -1));
@@ -182,6 +190,15 @@ public class FrmUsuarios extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 410, 180));
 
+        jCheckBox2.setText("Modulo x");
+        getContentPane().add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, -1, -1));
+
+        jCheckBox3.setText("Modulo y");
+        getContentPane().add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, -1));
+
+        jCheckBox4.setText("Modulo w");
+        getContentPane().add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 280, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -194,10 +211,10 @@ public class FrmUsuarios extends javax.swing.JFrame {
        du.setAppat(txtApPaterno.getText());
        du.setApmat(txtApMaterno.getText());
        
-       du.setmPacientes(chkPacientes.isSelected()?1:0);
-       du.setmFarmacia(chkFarmacia.isSelected()?1:0);
-       du.setmCtrlEnf(chkCtrlEnf.isSelected()?1:0);
-       du.setmBenefactores(chkBenefactores.isSelected()?1:0);
+       du.setmPacientes(chkProveedores.isSelected()?1:0);
+       du.setmFarmacia(chkClientes.isSelected()?1:0);
+       du.setmCtrlEnf(chkProduccion.isSelected()?1:0);
+       du.setmBenefactores(chkVentas.isSelected()?1:0);
        du.setmInventario(chkInventario.isSelected()?1:0);
        du.setmPersMed(chkPersMed.isSelected()?1:0);
        
@@ -251,12 +268,16 @@ public class FrmUsuarios extends javax.swing.JFrame {
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnResetPwd;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JCheckBox chkBenefactores;
-    private javax.swing.JCheckBox chkCtrlEnf;
-    private javax.swing.JCheckBox chkFarmacia;
+    private javax.swing.JCheckBox chkClientes;
     private javax.swing.JCheckBox chkInventario;
-    private javax.swing.JCheckBox chkPacientes;
     private javax.swing.JCheckBox chkPersMed;
+    private javax.swing.JCheckBox chkProduccion;
+    private javax.swing.JCheckBox chkProveedores;
+    private javax.swing.JCheckBox chkVentas;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
