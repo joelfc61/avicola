@@ -54,7 +54,7 @@ public class Conex {
             System.out.println("Error Conex B: " + ex.getMessage());
         } finally{
             if(con != null){
-                System.out.println("Conexion exitosa");    
+                //System.out.println("Conexion exitosa");    
             }
             
         }

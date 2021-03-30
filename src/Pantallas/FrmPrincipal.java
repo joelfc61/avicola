@@ -7,6 +7,10 @@
 package Pantallas;
 
 import clases.Datos;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -17,35 +21,55 @@ public class FrmPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
+   private void desactivar(){
+       mnuClientes.setVisible(false);
+       mnuGranjas.setVisible(false);
+       mnuProveedores.setVisible(false);
+       mnuProduccion.setVisible(false);
+       mnuParvadas.setVisible(false);
+       mnuParametros.setVisible(false);
+       mnuParvadas.setVisible(false);
+       mnuPuestos.setVisible(false);
+       smenuUsuarios.setVisible(false);
+   }
     public FrmPrincipal() {
         initComponents();
-        /*
-        mnuUserCtrl.setVisible(false);  
-        mnuPacientes.setVisible(false);
-        mnuFarmacia.setVisible(false);
-        mnuBenefactores.setVisible(false);
-        mnuInventario.setVisible(false);
-        mnuCtrlEnf.setVisible(false);
-         */
-        
-        //smenuUsuarios.setVisible(false);
+        desactivar();
+     
         
         lblUsuarioActual.setText(Datos.nombre);
-        /*
-        if(Datos.modPac>0)
-          mnuPacientes.setVisible(true);
-        if(Datos.modFarm>0)
-           mnuFarmacia.setVisible(true);
-        if(Datos.modbenefa>0)
-        mnuBenefactores.setVisible(true);
-        if(Datos.modInventario>0)
-           mnuInventario.setVisible(true);
-        if(Datos.modControlEnf>0)
-            mnuCtrlEnf.setVisible(true);
-        if(Datos.modUsuarios>0)
-         mnuUserCtrl.setVisible(true);
         
-        */
+        if(Datos.modClientes>0)
+          mnuClientes.setVisible(true);
+        if(Datos.modCompras>0)
+           mnuGastos.setVisible(true);
+        if(Datos.modGastos>0)
+            mnuGastos.setVisible(true);
+        if(Datos.modGranjas>0)
+        mnuGranjas.setVisible(true);
+        if(Datos.modParametros>0)
+           mnuParametros.setVisible(true);
+        if(Datos.modProveedores>0)
+            mnuProveedores.setVisible(true);
+        if(Datos.modPuestos>0)
+            mnuPuestos.setVisible(true);
+        if(Datos.modParvadas>0)
+            mnuParvadas.setVisible(true);
+        if(Datos.modUsuarios>0)
+          smenuUsuarios.setVisible(true);
+        
+       
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(FrmGranjas.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(FrmGranjas.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(FrmGranjas.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(FrmGranjas.class.getName()).log(Level.SEVERE, null, ex);
+        }
           
     }
 
@@ -354,7 +378,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void frmEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frmEmpresaActionPerformed
         // TODO add your handling code here:
         FrmEmpresa frme = new FrmEmpresa();
+       
         frme.setVisible(true);
+       
     }//GEN-LAST:event_frmEmpresaActionPerformed
 
     private void mnuParamsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuParamsActionPerformed

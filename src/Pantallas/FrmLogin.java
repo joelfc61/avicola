@@ -116,8 +116,8 @@ public class FrmLogin extends javax.swing.JFrame {
         });
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, -1, 40));
 
-        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ambos.png"))); // NOI18N
-        getContentPane().add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 70, 380, 210));
+        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ambos1.png"))); // NOI18N
+        getContentPane().add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 50, 380, 230));
 
         btnCfg.setText("CFG");
         btnCfg.addActionListener(new java.awt.event.ActionListener() {
@@ -161,10 +161,17 @@ public Image getIconImage(){
             if(rs.next()){
                 Datos.idusuario=rs.getInt("idusuario");
                 Datos.nombre = rs.getString("nombre") +" " + rs.getString("appaterno");
-                Datos.modRec = rs.getInt("mRecoleccion");
-                Datos.modMed = rs.getInt("mMedicamentos");
-                Datos.modUser = rs.getInt("mUsuarios");
+                Datos.modClientes = rs.getInt("mClientes");
+                Datos.modCompras = rs.getInt("mCompras");
+                Datos.modDepartamentos = rs.getInt("mDepartamentos");
                 Datos.modGastos = rs.getInt("mGastos");
+                Datos.modGranjas = rs.getInt("mGranjas");   
+                Datos.modParametros = rs.getInt("mParametros");   
+                Datos.modParvadas = rs.getInt("mParvadas");   
+                Datos.modProduccion = rs.getInt("mProduccion");   
+                Datos.modProveedores = rs.getInt("mProveedores");   
+                Datos.modPuestos = rs.getInt("mPuestos");
+                Datos.modUsuarios = rs.getInt("mUsuarios");   
                 Datos.modVentas = rs.getInt("mVentas");   
                // Datos.modUsuarios = rs.getInt("");
                 FrmPrincipal ppal = new FrmPrincipal();

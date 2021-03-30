@@ -8,6 +8,11 @@ package Pantallas;
 
 import clases.DaoUsuario;
 import clases.Hash;
+import clases.Usuario;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -20,8 +25,26 @@ public class FrmUsuarios extends javax.swing.JFrame {
      */
     public FrmUsuarios() {
         initComponents();
+        cargaTabla();
     }
 
+    private void cargaTabla(){
+        Object[]  columns ={"Id","Clave","Nombre","A. Paterno","A. Materno"};
+        DefaultTableModel dtm = new DefaultTableModel(columns,0);
+        List<DaoUsuario> milista = new ArrayList<DaoUsuario>();
+        DaoUsuario du = new DaoUsuario();
+        milista =(List<DaoUsuario>) du.listaUsuarios();
+        Object[] fila = new Object[5];
+        for(DaoUsuario midu: milista){
+            fila[0] = midu.getIdusuario();
+            fila[1] = midu.getClave();
+            fila[2] = midu.getNombre();
+            fila[3] = midu.getAppat();
+            fila[4] = midu.getApmat();
+            dtm.addRow(fila);
+        }
+        tblUsuarios.setModel(dtm);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,6 +56,7 @@ public class FrmUsuarios extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        btnLimpiar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtClave = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -45,21 +69,29 @@ public class FrmUsuarios extends javax.swing.JFrame {
         chkClientes = new javax.swing.JCheckBox();
         chkProduccion = new javax.swing.JCheckBox();
         chkVentas = new javax.swing.JCheckBox();
-        chkInventario = new javax.swing.JCheckBox();
-        chkPersMed = new javax.swing.JCheckBox();
+        chkParametros = new javax.swing.JCheckBox();
+        chkGastos = new javax.swing.JCheckBox();
         btnAgregar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
-        btnBuscar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         btnResetPwd = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        chkPuestos = new javax.swing.JCheckBox();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
+        tblUsuarios = new javax.swing.JTable();
+        chkUsuarios = new javax.swing.JCheckBox();
+        chkCompras = new javax.swing.JCheckBox();
+        chkDepartamentos = new javax.swing.JCheckBox();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        txtDepartamento = new javax.swing.JTextField();
+        txtPuesto = new javax.swing.JTextField();
+        chkParvadas = new javax.swing.JCheckBox();
+        chkGranjas = new javax.swing.JCheckBox();
+        lblId = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -74,19 +106,26 @@ public class FrmUsuarios extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Clave");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, 30));
 
         txtClave.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        getContentPane().add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 171, 30));
+        getContentPane().add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 171, 30));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Nombre");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Ap. Paterno");
@@ -107,27 +146,27 @@ public class FrmUsuarios extends javax.swing.JFrame {
 
         chkProveedores.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         chkProveedores.setText("Proveedores");
-        getContentPane().add(chkProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 281, -1, -1));
+        getContentPane().add(chkProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
 
         chkClientes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         chkClientes.setText("Clientes");
-        getContentPane().add(chkClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 281, -1, -1));
+        getContentPane().add(chkClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, -1, -1));
 
         chkProduccion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         chkProduccion.setText("Produccion");
-        getContentPane().add(chkProduccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 281, -1, -1));
+        getContentPane().add(chkProduccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, -1, -1));
 
         chkVentas.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         chkVentas.setText("Ventas");
-        getContentPane().add(chkVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 309, -1, -1));
+        getContentPane().add(chkVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, -1, -1));
 
-        chkInventario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        chkInventario.setText("Inventario");
-        getContentPane().add(chkInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 309, -1, -1));
+        chkParametros.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        chkParametros.setText("Parámetros");
+        getContentPane().add(chkParametros, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 360, -1, -1));
 
-        chkPersMed.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        chkPersMed.setText("Gastos");
-        getContentPane().add(chkPersMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 309, -1, -1));
+        chkGastos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        chkGastos.setText("Gastos");
+        getContentPane().add(chkGastos, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, -1, -1));
 
         btnAgregar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnAgregar.setText("Agregar");
@@ -136,7 +175,7 @@ public class FrmUsuarios extends javax.swing.JFrame {
                 btnAgregarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 364, -1, 41));
+        getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, -1, 41));
 
         btnSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnSalir.setText("Salir");
@@ -145,59 +184,93 @@ public class FrmUsuarios extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 363, 72, 42));
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 440, 72, 42));
 
-        btnBuscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnBuscar.setText("Buscar");
-        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 364, -1, 41));
+        btnEliminar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnEliminar.setText("Eliminar");
+        btnEliminar.setEnabled(false);
+        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 440, -1, 41));
 
         btnResetPwd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnResetPwd.setText("Reset Pwd");
-        getContentPane().add(btnResetPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(337, 364, -1, 41));
+        btnResetPwd.setEnabled(false);
+        getContentPane().add(btnResetPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 440, -1, 41));
 
         btnModificar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnModificar.setText("Modificar");
-        getContentPane().add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 364, -1, 41));
+        btnModificar.setEnabled(false);
+        getContentPane().add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 440, -1, 41));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel5.setText("Control de Usuarios");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, -1, -1));
 
-        jCheckBox1.setText("Modulo z");
-        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, -1, -1));
+        chkPuestos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        chkPuestos.setText("Puestos");
+        getContentPane().add(chkPuestos, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Asignar Acceso a   Módulos  ");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 246, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, -1));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tblUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Clave", "Nombre", "Ap. Paterno", "Ap. Materno"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+            }
+        ));
+        tblUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblUsuariosMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tblUsuarios);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 410, 180));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 470, 200));
 
-        jCheckBox2.setText("Modulo x");
-        getContentPane().add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, -1, -1));
+        chkUsuarios.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        chkUsuarios.setText("Usuarios");
+        getContentPane().add(chkUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, -1, -1));
 
-        jCheckBox3.setText("Modulo y");
-        getContentPane().add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, -1));
+        chkCompras.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        chkCompras.setText("Compras");
+        getContentPane().add(chkCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
 
-        jCheckBox4.setText("Modulo w");
-        getContentPane().add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 280, -1, -1));
+        chkDepartamentos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        chkDepartamentos.setText("Departamentos");
+        getContentPane().add(chkDepartamentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 360, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setText("Departamento");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setText("Puesto");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, -1));
+
+        txtDepartamento.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        getContentPane().add(txtDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 170, 30));
+
+        txtPuesto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        getContentPane().add(txtPuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 170, 30));
+
+        chkParvadas.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        chkParvadas.setText("Parvadas");
+        getContentPane().add(chkParvadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 360, -1, -1));
+
+        chkGranjas.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        chkGranjas.setText("Granjas");
+        getContentPane().add(chkGranjas, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 390, -1, -1));
+
+        lblId.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblId.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 30, 20));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setText("ID");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 20, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -210,21 +283,78 @@ public class FrmUsuarios extends javax.swing.JFrame {
        du.setNombre(txtNombre.getText());
        du.setAppat(txtApPaterno.getText());
        du.setApmat(txtApMaterno.getText());
+       du.setActivo(1);
+       du.setCambioPwd(0);
+       du.setDepartamento( Integer.parseInt(txtDepartamento.getText()));
+       du.setPuesto(Integer.parseInt(txtPuesto.getText()));
        
-       du.setmPacientes(chkProveedores.isSelected()?1:0);
-       du.setmFarmacia(chkClientes.isSelected()?1:0);
-       du.setmCtrlEnf(chkProduccion.isSelected()?1:0);
-       du.setmBenefactores(chkVentas.isSelected()?1:0);
-       du.setmInventario(chkInventario.isSelected()?1:0);
-       du.setmPersMed(chkPersMed.isSelected()?1:0);
+       du.setmClientes(chkClientes.isSelected()?1:0);
+       du.setmCompras(chkCompras.isSelected()?1:0);
+       du.setmGastos(chkGastos.isSelected()?1:0);
+       du.setmParametros(chkParametros.isSelected()?1:0);
+       du.setmProduccion(chkProduccion.isSelected()?1:0);
+       du.setmProveedores(chkProveedores.isSelected()?1:0);
+       du.setmUsuarios(chkUsuarios.isSelected()?1:0);
+       du.setmVentas(chkVentas.isSelected()?1:0);
+       du.setmPuestos(chkPuestos.isSelected()?1:0);
+       du.setmDepartamentos(chkDepartamentos.isSelected()?1:0);
+       du.setmGranjas(chkGranjas.isSelected()?1:0);
+       du.setmParvadas(chkParvadas.isSelected()?1:0);
        
        du.agregar();
+       JOptionPane.showMessageDialog(this, "Usuario Agregado exitosamente");
+       limpiar();
+       cargaTabla();
     }//GEN-LAST:event_btnAgregarActionPerformed
-
+private void limpiar(){
+    lblId.setText("");
+    txtClave.setText("");
+    txtNombre.setText("");
+    txtApPaterno.setText("");
+    txtApMaterno.setText("");
+    txtDepartamento.setText("");
+    txtPuesto.setText("");
+    chkClientes.setSelected(false);
+    chkCompras.setSelected(false);
+    chkDepartamentos.setSelected(false);
+    chkGastos.setSelected(false);
+    chkGranjas.setSelected(false);
+    chkParametros.setSelected(false);
+    chkParvadas.setSelected(false);
+    chkProduccion.setSelected(false);
+    chkProveedores.setSelected(false);
+    chkPuestos.setSelected(false);
+    chkUsuarios.setSelected(false);
+    chkVentas.setSelected(false);
+    btnEliminar.setEnabled(false);
+    btnModificar.setEnabled(false);
+    txtClave.requestFocus();
+    btnEliminar.setEnabled(false);
+    btnModificar.setEnabled(false);
+    btnResetPwd.setEnabled(false);
+}
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
       
         this.dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void tblUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuariosMouseClicked
+        // TODO add your handling code here:
+        int renglon = tblUsuarios.getSelectedRow();
+        lblId.setText(tblUsuarios.getValueAt(renglon, 0).toString());
+        txtClave.setText(tblUsuarios.getValueAt(renglon, 1).toString());
+        txtNombre.setText(tblUsuarios.getValueAt(renglon, 2).toString());
+        txtApMaterno.setText(tblUsuarios.getValueAt(renglon, 3).toString());
+        txtApPaterno.setText(tblUsuarios.getValueAt(renglon, 4).toString());
+        btnModificar.setEnabled(true);
+        btnEliminar.setEnabled(true);
+        btnResetPwd.setEnabled(true);
+    }//GEN-LAST:event_tblUsuariosMouseClicked
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        // TODO add your handling code here:
+        limpiar();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -264,33 +394,42 @@ public class FrmUsuarios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
-    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnResetPwd;
     private javax.swing.JButton btnSalir;
     private javax.swing.JCheckBox chkClientes;
-    private javax.swing.JCheckBox chkInventario;
-    private javax.swing.JCheckBox chkPersMed;
+    private javax.swing.JCheckBox chkCompras;
+    private javax.swing.JCheckBox chkDepartamentos;
+    private javax.swing.JCheckBox chkGastos;
+    private javax.swing.JCheckBox chkGranjas;
+    private javax.swing.JCheckBox chkParametros;
+    private javax.swing.JCheckBox chkParvadas;
     private javax.swing.JCheckBox chkProduccion;
     private javax.swing.JCheckBox chkProveedores;
+    private javax.swing.JCheckBox chkPuestos;
+    private javax.swing.JCheckBox chkUsuarios;
     private javax.swing.JCheckBox chkVentas;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JLabel lblId;
+    private javax.swing.JTable tblUsuarios;
     private javax.swing.JTextField txtApMaterno;
     private javax.swing.JTextField txtApPaterno;
     private javax.swing.JTextField txtClave;
+    private javax.swing.JTextField txtDepartamento;
     private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtPuesto;
     // End of variables declaration//GEN-END:variables
 }

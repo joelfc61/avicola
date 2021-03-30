@@ -11,15 +11,18 @@ public class Datos {
     public static String nombre;
     public static String appat;
     public static String apmat;
-    public static int modRec;
-    public static int modMed;
-    public static int modUser;
+    public static int modClientes;
+    public static int modCompras;
+    public static int modDepartamentos;
     public static int modGastos;
-    public static int modVentas;
-    public static int modPersMed;    
+    public static int modGranjas;
+    public static int modParametros;    
+    public static int modParvadas;
+    public static int modProduccion;
+    public static int modProveedores;
+     public static int modPuestos;
     public static int modUsuarios;
-    
-    
-    
+    public static int modVentas;
+    public static int mod;
                   
 }
