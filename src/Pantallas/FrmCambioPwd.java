@@ -52,7 +52,7 @@ public class FrmCambioPwd extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Password Actual");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Password Nuevo");
@@ -108,9 +108,15 @@ public class FrmCambioPwd extends javax.swing.JFrame {
         verificar que el password actual sea correcto
         Si todo está bien, entonces modificar el password       
         */ 
-        String pwdNvo,pwdConf;
+        String PwdActual,pwdNvo,pwdConf;
+        PwdActual = new String(txtPwdActual.getPassword());
+        // confirmar que sea el que está guardado
         pwdNvo = new String(txtPwdNuevo.getPassword());
+        pwdConf = new String(txtPwdConfirma.getPassword());
+        //confirmar que sean iguales pwdNuevo y pwdConf
+        //si son iguales,  actualizar el passwd en bd  y cambioPwd en 0;
         JOptionPane.showMessageDialog(this, pwdNvo);
+        
     }//GEN-LAST:event_btnCambiarActionPerformed
 
     /**

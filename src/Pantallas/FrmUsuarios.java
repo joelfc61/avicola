@@ -6,8 +6,11 @@
 
 package Pantallas;
 
+import clases.ComboItem;
+import clases.DaoPuesto;
 import clases.DaoUsuario;
 import clases.Hash;
+import clases.Puesto;
 import clases.Usuario;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,8 +29,17 @@ public class FrmUsuarios extends javax.swing.JFrame {
     public FrmUsuarios() {
         initComponents();
         cargaTabla();
+        cargaCombo();
     }
-
+private void cargaCombo(){
+    ComboItem item = null;
+    DaoPuesto dp = new DaoPuesto();
+    List<Puesto> lista =  dp.obtenerPuestos();
+    for(Puesto p : lista){
+        item = new ComboItem(p.getId(), p.getNombre());
+        cmbPuestos.addItem(item);
+    }
+}
     private void cargaTabla(){
         Object[]  columns ={"Id","Clave","Nombre","A. Paterno","A. Materno"};
         DefaultTableModel dtm = new DefaultTableModel(columns,0);
@@ -92,6 +104,7 @@ public class FrmUsuarios extends javax.swing.JFrame {
         chkGranjas = new javax.swing.JCheckBox();
         lblId = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        cmbPuestos = new javax.swing.JComboBox<>();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -199,6 +212,11 @@ public class FrmUsuarios extends javax.swing.JFrame {
         btnModificar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnModificar.setText("Modificar");
         btnModificar.setEnabled(false);
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 440, -1, 41));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -271,6 +289,8 @@ public class FrmUsuarios extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setText("ID");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 20, -1));
+
+        getContentPane().add(cmbPuestos, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 230, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -346,6 +366,25 @@ private void limpiar(){
         txtNombre.setText(tblUsuarios.getValueAt(renglon, 2).toString());
         txtApMaterno.setText(tblUsuarios.getValueAt(renglon, 3).toString());
         txtApPaterno.setText(tblUsuarios.getValueAt(renglon, 4).toString());
+        DaoUsuario du = new DaoUsuario();
+        int ID =  Integer.parseInt(lblId.getText());
+        du.setIdusuario(ID);
+        Usuario usuario = du.buscaUsuario();
+        usuario.setIdusuario(ID);
+        du.buscaUsuario();
+        chkProduccion.setSelected((usuario.getmProduccion() == 1)? true:  false);
+        chkProveedores.setSelected((usuario.getmProveedores()== 1)? true:  false);
+        chkGastos.setSelected((usuario.getmGastos()== 1)? true:  false);
+        chkVentas.setSelected((usuario.getmVentas()== 1)? true:  false);
+        chkUsuarios.setSelected((usuario.getmUsuarios()== 1)? true:  false);
+        chkClientes.setSelected((usuario.getmClientes()== 1)? true:  false);
+        chkCompras.setSelected((usuario.getmCompras()== 1)? true:  false);
+        chkParametros.setSelected((usuario.getmParametros()== 1)? true:  false);
+        chkPuestos.setSelected((usuario.getmPuestos()== 1)? true:  false);
+        chkDepartamentos.setSelected((usuario.getmDepartamentos()== 1)? true:  false);
+        chkParvadas.setSelected((usuario.getmParvadas()== 1)? true:  false);
+        chkGranjas.setSelected((usuario.getmGranjas()== 1)? true:  false);
+        
         btnModificar.setEnabled(true);
         btnEliminar.setEnabled(true);
         btnResetPwd.setEnabled(true);
@@ -355,6 +394,10 @@ private void limpiar(){
         // TODO add your handling code here:
         limpiar();
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnModificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -411,6 +454,7 @@ private void limpiar(){
     private javax.swing.JCheckBox chkPuestos;
     private javax.swing.JCheckBox chkUsuarios;
     private javax.swing.JCheckBox chkVentas;
+    private javax.swing.JComboBox<ComboItem> cmbPuestos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

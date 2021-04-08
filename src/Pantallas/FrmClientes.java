@@ -62,7 +62,7 @@ public class FrmClientes extends javax.swing.JFrame {
         btnGuardar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
-        btnLimpia = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -100,7 +100,7 @@ public class FrmClientes extends javax.swing.JFrame {
 
         jLabel11.setText("Cod.Post.");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, -1, -1));
-        getContentPane().add(txtCP, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 180, 90, -1));
+        getContentPane().add(txtCP, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, 90, -1));
 
         jLabel12.setText("Estado");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
@@ -113,7 +113,7 @@ public class FrmClientes extends javax.swing.JFrame {
 
         cmbMunicipios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Guadajalara", "Tlaquepaque", "Tonala", "Zapopan", " " }));
         getContentPane().add(cmbMunicipios, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 230, -1));
-        getContentPane().add(txtNumInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 80, -1));
+        getContentPane().add(txtNumInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 80, -1));
 
         jLabel9.setText("IdCliente");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
@@ -167,8 +167,8 @@ public class FrmClientes extends javax.swing.JFrame {
         btnEliminar.setText("Eliminar");
         getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, -1, -1));
 
-        btnLimpia.setText("Limpiar");
-        getContentPane().add(btnLimpia, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, -1, -1));
+        btnLimpiar.setText("Limpiar");
+        getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, -1, -1));
 
         jButton5.setText("Agregar");
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, -1, -1));
@@ -215,7 +215,7 @@ public class FrmClientes extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnLimpia;
+    private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JComboBox<String> cmbEstados;
     private javax.swing.JComboBox<String> cmbMunicipios;

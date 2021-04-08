@@ -3,17 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Avicola/src/clases/Config.java</file>
-            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Avicola/src/Pantallas/FrmParvadas.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Avicola/src/clases/Encriptar.java</file>
             <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Avicola/src/Pantallas/FrmProduccion.java</file>
             <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Avicola/src/Pantallas/FrmGranjas.java</file>
-            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Avicola/src/Pantallas/FrmPrincipal.java</file>
-            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Avicola/src/Pantallas/FrmClientes.java</file>
-            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Avicola/src/clases/Conex.java</file>
-            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Avicola/src/Pantallas/FrmCatGastos.java</file>
             <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Avicola/src/Pantallas/FrmGastos.java</file>
-            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Avicola/src/Pantallas/FrmEmpresa.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Avicola/src/clases/Usuario.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Avicola/src/Pantallas/FrmLogin.java</file>
             <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Avicola/src/Pantallas/FrmCompras.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Avicola/src/Pantallas/FrmUsuarios.java</file>
         </group>
     </open-files>
 </project-private>

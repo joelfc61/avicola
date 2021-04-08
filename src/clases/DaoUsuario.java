@@ -71,6 +71,36 @@ public class DaoUsuario extends Usuario{
         
         return res;
     }
+    public Usuario buscaUsuario(){
+        Usuario usr = new Usuario();
+        
+        Connection conn = Conex.getConnection();
+        try {
+            PreparedStatement pstm =  conn.prepareStatement("select * from usuarios where idusuario = ?");
+            pstm.setInt(1, getIdusuario());
+            ResultSet rs = pstm.executeQuery();
+            if (rs.next()) {
+                usr.setmProduccion(rs.getInt("mProduccion"));
+                usr.setmProveedores(rs.getInt("mProveedores"));
+                usr.setmGastos(rs.getInt("mGastos"));
+                usr.setmVentas(rs.getInt("mVentas"));
+                usr.setmUsuarios(rs.getInt("mUsuarios"));
+                usr.setmClientes(rs.getInt("mClientes"));
+                usr.setmCompras(rs.getInt("mCompras"));
+                usr.setmParametros(rs.getInt("mParametros"));
+                usr.setmPuestos(rs.getInt("mPuestos"));
+                usr.setmDepartamentos(rs.getInt("mDepartamentos"));
+                usr.setmGranjas(rs.getInt("mGranjas"));
+                usr.setmParvadas(rs.getInt("mParvadas"));
+               
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error: " + ex.getMessage());
+        }
+        
+        
+        return usr;
+    }
     public List<DaoUsuario> listaUsuarios(){
         List<DaoUsuario> lista = new ArrayList<>();
          Connection conn = Conex.getConnection();
