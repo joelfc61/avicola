@@ -160,6 +160,7 @@ public Image getIconImage(){
             ResultSet rs = stm.executeQuery("select * from usuarios where clave='" +txtUsuario.getText() + "' and password= '"+ cadena+"'");
             if(rs.next()){
                 Datos.idusuario=rs.getInt("idusuario");
+                Datos.clave = rs.getString("clave");
                 Datos.nombre = rs.getString("nombre") +" " + rs.getString("appaterno");
                 Datos.modClientes = rs.getInt("mClientes");
                 Datos.modCompras = rs.getInt("mCompras");
@@ -174,6 +175,9 @@ public Image getIconImage(){
                 Datos.modUsuarios = rs.getInt("mUsuarios");   
                 Datos.modVentas = rs.getInt("mVentas");   
                // Datos.modUsuarios = rs.getInt("");
+               if(rs.getInt("cambioPwd") == 1){
+                   JOptionPane.showMessageDialog(this, "Le recomiendo actualizar su password!!");
+               }
                 FrmPrincipal ppal = new FrmPrincipal();
                 ppal.setVisible(true);
                 this.setVisible(false);

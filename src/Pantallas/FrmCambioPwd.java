@@ -6,6 +6,15 @@
 
 package Pantallas;
 
+import clases.Conex;
+import clases.Datos;
+import clases.Hash;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -110,12 +119,50 @@ public class FrmCambioPwd extends javax.swing.JFrame {
         */ 
         String PwdActual,pwdNvo,pwdConf;
         PwdActual = new String(txtPwdActual.getPassword());
+        Connection conn = Conex.getConnection();
+        String cadPwd = Hash.sha1(PwdActual);
+        boolean res = false;
+        try {
+            PreparedStatement pstm = conn.prepareStatement("select * from usuarios where idusuario= ? and password = ?");
+            pstm.setInt(1, Datos.idusuario);
+            System.out.println("Pwd Actual: " + cadPwd);
+            pstm.setString(2, cadPwd);
+            ResultSet rs = pstm.executeQuery();
+            if(rs.next()){
+                res = true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmCambioPwd.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         // confirmar que sea el que está guardado
         pwdNvo = new String(txtPwdNuevo.getPassword());
         pwdConf = new String(txtPwdConfirma.getPassword());
-        //confirmar que sean iguales pwdNuevo y pwdConf
+        if (res) {
+            if (pwdNvo.equals(pwdConf)) {
+
+                PreparedStatement pst;
+                try {
+                    pst = conn.prepareStatement("update usuarios set password = ?,cambioPwd = 0 where idusuario = ?");
+                    pst.setString(1, Hash.sha1(pwdNvo));
+                    System.out.println("Pwd nuevo: " + Hash.sha1(pwdNvo));
+                    pst.setInt(2, Datos.idusuario);
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(this, "Password modificado exitosamente");
+                    this.dispose();
+                } catch (SQLException ex) {
+                    System.out.println("Error: " + ex.getMessage());;
+                }
+
+            } else {
+                System.out.println("El nuevo PWD no es igual al confirmado");
+            }
+        } else {
+                 System.out.println("Password actual incorrecto");
+        }
+//confirmar que sean iguales pwdNuevo y pwdConf
         //si son iguales,  actualizar el passwd en bd  y cambioPwd en 0;
-        JOptionPane.showMessageDialog(this, pwdNvo);
+        
         
     }//GEN-LAST:event_btnCambiarActionPerformed
 

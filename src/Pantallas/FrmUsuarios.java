@@ -7,13 +7,20 @@
 package Pantallas;
 
 import clases.ComboItem;
+import clases.Conex;
 import clases.DaoPuesto;
 import clases.DaoUsuario;
+import clases.Datos;
 import clases.Hash;
 import clases.Puesto;
 import clases.Usuario;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -207,6 +214,11 @@ private void cargaCombo(){
         btnResetPwd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnResetPwd.setText("Reset Pwd");
         btnResetPwd.setEnabled(false);
+        btnResetPwd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetPwdActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnResetPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 440, -1, 41));
 
         btnModificar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -219,9 +231,9 @@ private void cargaCombo(){
         });
         getContentPane().add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 440, -1, 41));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Control de Usuarios");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         chkPuestos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         chkPuestos.setText("Puestos");
@@ -398,6 +410,25 @@ private void limpiar(){
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void btnResetPwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetPwdActionPerformed
+        // TODO add your handling code here:
+        Connection conn = Conex.getConnection();
+        int id = Integer.parseInt(lblId.getText());
+        String cve = txtClave.getText();
+        String nvoPwd = Hash.sha1(cve+"Pwd");
+        try {
+            PreparedStatement pstm = conn.prepareStatement("update usuarios set passwprd = ? where idusuario=? ");
+            pstm.setString(1, nvoPwd);
+            pstm.setInt(2, id);
+            pstm.executeUpdate();
+            JOptionPane.showMessageDialog(this, "El password ha sido reseteado");
+        } catch (SQLException ex) {
+            System.out.println("Error: " + ex.getMessage());
+        }
+        dispose();
+        
+    }//GEN-LAST:event_btnResetPwdActionPerformed
 
     /**
      * @param args the command line arguments

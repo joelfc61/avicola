@@ -8,6 +8,7 @@ package clases;
  */
 public class Datos {
     public static int idusuario;
+    public static String clave;
     public static String nombre;
     public static String appat;
     public static String apmat;
