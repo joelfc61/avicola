@@ -209,6 +209,11 @@ private void cargaCombo(){
         btnEliminar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.setEnabled(false);
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 440, -1, 41));
 
         btnResetPwd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -429,6 +434,10 @@ private void limpiar(){
         dispose();
         
     }//GEN-LAST:event_btnResetPwdActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
      * @param args the command line arguments

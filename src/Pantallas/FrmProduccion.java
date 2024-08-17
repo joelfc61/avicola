@@ -179,7 +179,7 @@ public class FrmProduccion extends javax.swing.JFrame {
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 237, -1, -1));
 
         txtTotalNumHuevos.setEditable(false);
-        getContentPane().add(txtTotalNumHuevos, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, 71, 20));
+        getContentPane().add(txtTotalNumHuevos, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, 71, 30));
 
         jLabel13.setText("Kgs");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(536, 237, -1, -1));

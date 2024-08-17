@@ -72,6 +72,11 @@ public class FrmParvadas extends javax.swing.JFrame {
         jLabel7.setText("Clave de Parvada");
 
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         btnSalir.setText("Salir");
 
@@ -104,8 +109,8 @@ public class FrmParvadas extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(108, 108, 108)
                         .addComponent(btnGuardar)
-                        .addGap(104, 104, 104)
-                        .addComponent(btnSalir))
+                        .addGap(79, 79, 79)
+                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(27, 27, 27)
@@ -165,6 +170,10 @@ public class FrmParvadas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -124,7 +124,7 @@ public class FrmProveedores extends javax.swing.JFrame {
 
         jLabel4.setText("Nombre Contacto");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
-        getContentPane().add(txtContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 330, -1));
+        getContentPane().add(txtContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 330, -1));
 
         jLabel15.setText("Telefono:");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));

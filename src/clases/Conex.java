@@ -21,6 +21,11 @@ public class Conex {
     private Connection con = null;
     
     public static Connection getConnection(){
+        /*
+          Deberia traer los datos del archivo Config.conf
+           En este momento estan hardcodeados
+          Dar opcion de elegir MySql / SQL Server
+        */
         String url="";
         String server = "localhost";
         String insSql = "";

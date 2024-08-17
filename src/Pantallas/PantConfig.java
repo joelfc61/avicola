@@ -293,11 +293,14 @@ public class PantConfig extends javax.swing.JFrame {
           else
         {
           // JOptionPane.showMessageDialog(this," Archivo no se encuentra!!");
+            System.out.println("Archivo de configuracion no existe!!");
         }
         
         }
           catch(IOException ioe)
-        { }
+        { 
+            System.out.println("Error al inicializar la Pantalla");
+        }
     }//GEN-LAST:event_formWindowActivated
 
     /**

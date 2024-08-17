@@ -93,7 +93,7 @@ public class FrmVentas extends javax.swing.JFrame {
 
         jLabel11.setText("Importe");
 
-        jLabel12.setText("$ 24,00.00");
+        jLabel12.setText("$ 2400.00");
         jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

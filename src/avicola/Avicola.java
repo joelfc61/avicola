@@ -18,7 +18,7 @@ public class Avicola {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        String cad = Hash.getHash("joelfc61", "sha1");
+        String cad = Hash.getHash("JuanFCPwd","sha1");
         System.out.println(cad);
     }
     
